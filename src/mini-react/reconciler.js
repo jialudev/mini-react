@@ -59,7 +59,7 @@ export function reconcileChildren(workInProgress, elements) {
       prevSibling = newFiber;
     } else if (newFiber) {
       // newFiber 和 prevSibling 存在，通过 sibling 作为兄弟 fiber 连接
-      prevSibling.sibling = newFiber;
+      newFiber.sibling = prevSibling;
       prevSibling = newFiber;
     }
     index++;
